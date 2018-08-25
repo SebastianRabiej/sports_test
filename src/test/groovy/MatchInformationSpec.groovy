@@ -94,7 +94,6 @@ class MatchInformationSpec extends Specification {
         restClient.post(path: "/mockPenalties", body: penaltiesInfo, contentType: ContentType.JSON)
     }
 
-
     PenaltiesInfo createPenaltiesInfo(Closure closure) {
         Rows rows = GroovyTables.createRows(closure)
         return new PenaltiesInfo(rows.getColumnHeadings().get(0),
@@ -133,5 +132,4 @@ class MatchInformationSpec extends Specification {
         assert resultPenaltiesInfo.guestTeamName == assumedMatchInfo.guestTeamName
         assert resultPenaltiesInfo.guestNumberOfPenalties == assumedMatchInfo.guestNumberOfPenalties
     }
-
 }
